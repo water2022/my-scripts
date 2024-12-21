@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# 生成随机文件名的函数
+generate_random_name() {
+  cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1
+}
+
+# 执行第一个命令
+TMPFILE1=$(generate_random_name)
+bash <(curl -fLSs https://dl.nyafw.com/download/nyanpass-install.sh -o "/tmp/$TMPFILE1.sh") rel_nodeclient "-o -t c4f99c5e-cc23-495f-9430-ceb39869b5a3 -u https://ny.sulian.cc"
+rm "/tmp/$TMPFILE1.sh"
+
+# 执行第二个命令
+TMPFILE2=$(generate_random_name)
+bash <(curl -fLSs https://dl.nyafw.com/download/nyanpass-install.sh -o "/tmp/$TMPFILE2.sh") rel_nodeclient "-o -t 993c6e40-a718-4187-a88f-d3148ead9c61 -u https://kk.zhongzhuan123.buzz"
+rm "/tmp/$TMPFILE2.sh"
